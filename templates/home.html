@@ -1,0 +1,21 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Module Control</title>
+</head>
+<body>
+    <h1>WiFi Module Control</h1>
+    <form method="POST" action="">
+        {% csrf_token %}  <!-- CSRF koruması için token -->
+        <input type="text" name="text_input" placeholder="Enter something...">
+        <button type="submit">Send</button>
+    </form>
+
+    {% if received_text %}
+    <p>You entered: {{ received_text }}</p>
+    {% endif %}
+</body>
+</html>
